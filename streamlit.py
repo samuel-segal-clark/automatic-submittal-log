@@ -25,6 +25,10 @@ settings_input = {
     'spec-section': {
         'name': 'Spec Section Column',
         'type': 'str'
+    },
+    'number-rows': {
+        'name': "Number Rows",
+        'type': 'num'
     }
 }
 
@@ -32,7 +36,6 @@ settings_container = st.container()
 file_upload = settings_container.file_uploader('Import settings', type=['ini'])
 settings_expander = st.expander('Settings')
 
-form_elements = dict()
 with settings_expander.form('Input Settings'):
     for obj_key in settings_input.keys():
         set_obj = settings_input[obj_key]
@@ -45,7 +48,10 @@ with settings_expander.form('Input Settings'):
                 )
             case 'str':
                 new_element = st.text_input(set_obj['name'])
-        form_elements[obj_key] = new_element
+            case 'num':
+                new_element = st.number_input(set_obj['name'])
+        sub_log_settings[obj_key] = new_element
     submit_button = st.form_submit_button('Submit')
     if submit_button:
+        print(sub_log_settings)
         st.write('Settings submited! The settings have been downloaded to your computer to use in the future!')
