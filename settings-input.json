@@ -1,0 +1,19 @@
+{
+    "title-format": {
+        "name": "Title Format",
+        "type": "choice",
+        "choices": [
+            "Default",
+            "WMATA"
+        ],
+        "default": "Default"
+    },
+    "spec-section": {
+        "name": "Spec Section Column",
+        "type": "str"
+    },
+    "number-rows": {
+        "name": "Number Rows",
+        "type": "num"
+    }
+}

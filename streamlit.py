@@ -1,4 +1,7 @@
+import json
 import streamlit as st
+
+from textutil import get_text
 
 st.write('# Automatic Submittal Log')
 
@@ -7,30 +10,14 @@ procore_csv = file_container[0].file_uploader('Upload Procore CSV here',type=['c
 submittal_log_xlsx = file_container[1].file_uploader('Upload Submittal Log XLSX here', type=['xlsx'])
 
 
-#TODO Read this from a file (i.e. default settings)
+json_text = get_text('settings-input.json')
+settings_input = json.loads(json_text)
+
+#Loads the default settings onto it
 sub_log_settings = {
-
-}
-
-#TODO Read this from a file (i.e. settings types json)
-settings_input = {
-    'title-format': {
-        'name': 'Title Format',
-        'type': 'choice',
-        'choices': [
-            'Default',
-            'WMATA'
-        ]
-    },
-    'spec-section': {
-        'name': 'Spec Section Column',
-        'type': 'str'
-    },
-    'number-rows': {
-        'name': "Number Rows",
-        'type': 'num'
+    key: (value['default'] if 'default' in value else None)
+    for key, value in settings_input.items()
     }
-}
 
 settings_container = st.container()
 file_upload = settings_container.file_uploader('Import settings', type=['ini'])
