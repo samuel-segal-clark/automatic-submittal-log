@@ -8,12 +8,96 @@
         ],
         "default": "Default"
     },
-    "spec-section": {
-        "name": "Spec Section Column",
-        "type": "str"
+    "update-number": {
+        "name": "Update Submittal Number",
+        "type": "choice",
+        "choices": [
+            "Update",
+            "Do not Update"
+        ],
+        "default": "Update"
     },
-    "number-rows": {
-        "name": "Number Rows",
-        "type": "num"
+    "max-revised": {
+        "name": "Max Revised Submittal Dates",
+        "type": "num",
+        "default": 4
+    },
+    "change-spec": {
+        "name": "Change Spec",
+        "type": "choice",
+        "choices":[
+            "True",
+            "False"
+        ],
+        "default": "False"
+    },
+    "spec-format": {
+        "name": "Spec Format",
+        "type": "choice",
+        "choices": [
+            "long",
+            "short"
+        ],
+        "default": "short"
+    },
+    "spec-column": {
+        "name": "Spec Section Column",
+        "type": "str",
+        "default": "F"
+    },
+    "title-column": {
+        "name": "Title Column",
+        "type": "str",
+        "default": "G"
+    },
+    "sub-column": {
+        "name": "Sub Spec Column",
+        "type": "str",
+        "default": "H"
+    },
+    "number-column": {
+        "name": "Number Column",
+        "type": "str",
+        "default": "J"
+    },
+    "item-type": {
+        "name": "Item Type Column",
+        "type": "str",
+        "default": "K"
+    },
+    "submit-column": {
+        "name": "Submit By Date Column",
+        "type": "str",
+        "default": "Q"
+    },
+    "approval-column": {
+        "name": "Need Approval Date Column",
+        "type": "str",
+        "default": "R"
+    },
+    "location-column": {
+        "name": "Location Column",
+        "type": "str",
+        "default": "T"
+    },
+    "submission-column": {
+        "name": "Submission Date Column",
+        "type": "str",
+        "default": "U"
+    },
+    "returned-column": {
+        "name": "Returned Date Column",
+        "type": "str",
+        "default": "W"
+    },
+    "status-column": {
+        "name": "Status Column",
+        "type": "str",
+        "default": "X"
+    },
+    "revised-column": {
+        "name": "Revised Date Start Column",
+        "type": "str",
+        "default": "Z"
     }
 }
