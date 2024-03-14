@@ -31,12 +31,19 @@ with settings_expander.form('Input Settings'):
             case 'choice':
                 new_element = st.selectbox(
                     label=set_obj['name'],
-                    options=set_obj['choices']
+                    options=set_obj['choices'],
+                    index = set_obj['default'] if 'default' in set_obj else 0
                 )
             case 'str':
-                new_element = st.text_input(set_obj['name'])
+                new_element = st.text_input(
+                    label = set_obj['name'],
+                    value = set_obj['default'] if 'default' in set_obj else ''
+                )
             case 'num':
-                new_element = st.number_input(set_obj['name'])
+                new_element = st.number_input(
+                    label = set_obj['name'],
+                    value = set_obj['default'] if 'default' in set_obj else None
+                )
         sub_log_settings[obj_key] = new_element
     submit_button = st.form_submit_button('Submit')
     if submit_button:

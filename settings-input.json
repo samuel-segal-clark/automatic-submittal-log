@@ -6,7 +6,7 @@
             "Default",
             "WMATA"
         ],
-        "default": "Default"
+        "default": 0
     },
     "update-number": {
         "name": "Update Submittal Number",
@@ -15,7 +15,7 @@
             "Update",
             "Do not Update"
         ],
-        "default": "Update"
+        "default": 0
     },
     "max-revised": {
         "name": "Max Revised Submittal Dates",
@@ -29,7 +29,7 @@
             "True",
             "False"
         ],
-        "default": "False"
+        "default": 1
     },
     "spec-format": {
         "name": "Spec Format",
@@ -38,7 +38,7 @@
             "long",
             "short"
         ],
-        "default": "short"
+        "default": 1
     },
     "spec-column": {
         "name": "Spec Section Column",
