@@ -25,9 +25,9 @@ def get_data(xlsx_file: BytesIO, csv_file: BytesIO, config: AutoLogConfig) -> tu
     
     for row in iterable:
         line = row[row_start : row_end]
-        submittal = process_line(line)
+        submittal = process_line(line, config)
         out_submittals.append(submittal)
-
+    
     #Reads the csv file
     out_csv: pd.DataFrame = pd.read_csv(csv_file)
 
